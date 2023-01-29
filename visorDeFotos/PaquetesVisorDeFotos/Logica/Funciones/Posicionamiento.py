@@ -1,17 +1,16 @@
-from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import infoParent
 from tkinter import messagebox
+from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoTools
 import os
 
 def nuevaPosicionLuegoDePulsarBoton(accion, posicionActual):
     posicion = posicionActual
     primeraPosicion = 0
     longitud = 0
-    
-    with os.scandir('/home/david/Imágenes/FotosVisor/') as archivo:
-            for foto in archivo:
+    with os.scandir('/home/david/Imágenes/FotosVisor/') as directorio: #Hay que meter ese path en un modulo o clase e importarlo.
+            for foto in directorio:
                 if foto.is_file()  and foto.name.endswith('.jpg'):
                     longitud += 1
-    
+   
     if accion == "irAprimerRegistro": posicion = primeraPosicion
     
     if accion == "retroceder":

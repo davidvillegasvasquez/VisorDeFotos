@@ -1,14 +1,14 @@
 from PIL import ImageTk, Image
-from datetime import datetime, time, date
 import os
 from tkinter import messagebox
 import sys
 
 class FotoTools:
     def __init__(self, rutaArg):
-        self.ruta = rutaArg
-        self.fotos = ()
-        if not os.path.exists(self.ruta): 
+        if os.path.exists(rutaArg): 
+            self.ruta = rutaArg
+            self.fotos = ()
+        else:
             messagebox.showerror(message="Fotos no encontradas, verifique path a carpeta de fotos", title='Error')
             sys.exit(1)
    

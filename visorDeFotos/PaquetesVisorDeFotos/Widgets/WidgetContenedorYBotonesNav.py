@@ -9,7 +9,7 @@ class WidgetMarco:
     def __init__(self, argraiz):
         self.framePadre = argraiz
         self.ir_a = StringVar()
-        self.posicion = 0
+        self.posicion = -1
         self.fotos = FotoTools('/home/david/Imágenes/FotosVisor/').obtenerFotos()
         #Note que no creamos un objeto de tipo FotoTools persistente usando un apuntador-identificador para ello. 
         #Simplemente tomamos la tupla del método .obtenerFotos.
