@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import ttk
 
 class Geometria:
-    def __init__(self, argraiz):
-        self.raizTk = argraiz
+    def __init__(self, argRaiz):
+        self.raizTk = argRaiz
         # Cuerpo superior(lo colocamos en row = 1 para dejarnos margén de maniobra para una eventual necesidad de agregar):
         self.cuerpo_superior = ttk.Frame(self.raizTk)
         self.cuerpo_superior.grid(column=1, row=1, sticky=(N, W, E, S))

@@ -1,15 +1,11 @@
 from tkinter import messagebox
-from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoTools
-import os
+from PaquetesVisorDeFotos.Logica.Funciones.FuncionesVarias import cantidadDeFotosEn
+from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import carpetaDeFotos
 
 def nuevaPosicionLuegoDePulsarBoton(accion, posicionActual):
     posicion = posicionActual
     primeraPosicion = 0
-    longitud = 0
-    with os.scandir('/home/david/Imágenes/FotosVisor/') as directorio: #Hay que meter ese path en un modulo o clase e importarlo.
-            for foto in directorio:
-                if foto.is_file()  and foto.name.endswith('.jpg'):
-                    longitud += 1
+    longitud = cantidadDeFotosEn(carpetaDeFotos)
    
     if accion == "irAprimerRegistro": posicion = primeraPosicion
     

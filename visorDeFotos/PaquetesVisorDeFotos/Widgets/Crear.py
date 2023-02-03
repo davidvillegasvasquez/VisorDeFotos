@@ -1,12 +1,12 @@
 from tkinter import ttk
 from tkinter import *
 from tksheet import *
-from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import infoChild
+from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import descripWidgetsCuerpoSup
 
-def crearWidgetsYsusVarControlEnBaseAdescrip(widget, widgetPadre, descripWidget):
-    for nombreWidget, val in descripWidget.items():
+def crearWidgetsYsusVarControlEnBaseAdescrip(widget, widgetPadre):
+    for nombreWidget, val in descripWidgetsCuerpoSup.items():
         #1ero, creamos las variables de control tkinter. Note como la función setattr, al no encontrar el objeto a setear su atributo-propiedad, lo crea, tal "with open(ruta, mode='r+') as archivo" crea el archivo al no encontrarlo:
-        tipo = descripWidget[nombreWidget]['tipoWidget']
+        tipo = descripWidgetsCuerpoSup[nombreWidget]['tipoWidget']
         
         if tipo == "controlvar":
             if val['tipoVar'] == 'texto': setattr(widget, nombreWidget, StringVar())

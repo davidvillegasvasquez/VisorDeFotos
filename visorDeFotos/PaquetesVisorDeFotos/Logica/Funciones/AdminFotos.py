@@ -18,5 +18,11 @@ class FotoTools:
                 if foto.is_file()  and foto.name.endswith('.jpg'):
                     self.fotos += (ImageTk.PhotoImage(Image.open(os.path.join(self.ruta, foto.name))), )
         return self.fotos
+        
+class obtenerFotosDeCampoPostgreSQL:
+    def __init__(self, columBytea):
+        if os.path.exists(rutaArg): 
+            self.campo = columBytea
+            self.fotos = ()
                                               
             
