@@ -28,12 +28,10 @@ class WidgetMarco:
         self.botonAvance.grid(column=2, row=1, sticky=NSEW)
         self.botonUltimo = ttk.Button(self.framePadre.cuerpo_inferior, text=">>", command=lambda: self.actualizarWidgetsEnNuevaPosicion(nuevaPosicionLuegoDePulsarBoton("irAultimoRegistro", self.posicion)), width=3)
         self.botonUltimo.grid(column=3, row=1, sticky=NSEW)
-        self.botonIrA = ttk.Button(self.framePadre.cuerpo_inferior, text="Ir a venta:", command=lambda:self.actualizarWidgetsEnNuevaPosicion(indiceDelElementoEnTupla(self.ir_a.get(), self.posicion)))
+        self.botonIrA = ttk.Button(self.framePadre.cuerpo_inferior, text="Buscar", command=lambda:self.actualizarWidgetsEnNuevaPosicion(indiceDelElementoEnTupla(self.ir_a.get(), self.posicion)))
         self.botonIrA.grid(column=4, row=1, sticky=NSEW)
         ttk.Entry(self.framePadre.cuerpo_inferior, width=7, textvariable=self.ir_a).grid(column=5, row=1) 
         
     def actualizarWidgetsEnNuevaPosicion(self, *args): 
         self.posicion =  args[0]
-        self.etiqImagenFoto['image'] = self.fotos[self.posicion]
-                  
-                 
+        self.etiqImagenFoto['image'] = self.fotos[self.posicion]                             
