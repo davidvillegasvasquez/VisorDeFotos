@@ -1,6 +1,6 @@
 from tkinter import * 
 from tkinter import ttk
-from PaquetesVisorDeFotos.Widgets.Crear import *
+from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoToolsPostgreSQL
 from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import descripWidgetsCuerpoSup
 
 class Geometria:
@@ -43,6 +43,15 @@ class Geometria:
     def ingresarFotosByteaEnPostgre(self, *args):
         self.top = Toplevel(height = 200, width = 100)
         self.top.title('Ingreso de Fotos')
-        ttk.Label(self.top, text='Ubicación carpeta de fotos:').grid(row=1, column=1)
-        ttk.Entry(self.top, width= 20, textvariable = '').grid(row=1, column=2)
-        self.top.grab_set()      
+        self.ubicacionFoto = StringVar()
+        #crearWidgetsYsusVarControlEnBaseAdescrip(self, self.top) #self.framePadre.cuerpo_superior)
+        ttk.Label(self.top, text='Ubicación de la foto:').grid(row=1, column=1)
+        self.txtBoxUbicacionFoto = ttk.Entry(self.top, width= 20, textvariable = self.ubicacionFoto)
+        self.txtBoxUbicacionFoto.grid(row=1, column=2)
+        ttk.Button(self.top, width= 7, text = 'Ingresar', command = self.ingresarFotoAbaseDeDatosPostgre).grid(row=1, column=3)
+        self.top.grab_set()
+        
+    def ingresarFotoAbaseDeDatosPostgre(self, *args):
+        fotoIngreso = FotoToolsPostgreSQL()
+        fotoIngreso.ingresarFotoAPostgre(ubicaciónFoto = self.ubicacionFoto.get()) 
+               

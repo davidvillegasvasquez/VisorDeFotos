@@ -1,17 +1,17 @@
 from tkinter import *
 from tkinter import ttk
 from PaquetesVisorDeFotos.Widgets.Crear import *
-from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import carpetaDeFotos#Y otras informaciones necesarias para cuerpo medio e inferior
+from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import pathCarpetaDeFotosJpg#Y otras informaciones necesarias para cuerpo medio e inferior
 from PaquetesVisorDeFotos.Logica.Funciones.Posicionamiento import *
-from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoTools
+from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoToolsPIL
 
 class WidgetMarco:
     def __init__(self, argraiz):
         self.framePadre = argraiz
         self.ir_a = StringVar()
         self.posicion = -1
-        self.fotos = FotoTools(carpetaDeFotos).obtenerFotos()
-        #Note que no creamos un objeto de tipo FotoTools persistente usando un apuntador-identificador para ello. 
+        self.fotos = FotoToolsPIL(pathCarpetaDeFotosJpg).obtenerFotos()
+        #Note que no creamos un objeto de tipo FotoToolsPIL persistente usando un apuntador-identificador para ello. 
         #Simplemente tomamos la tupla del método .obtenerFotos.
         
         #Declaramos-creamos los atributos-objetos tipo widgets. Note que self es cada widget hijo creado dentro de su padre, self.framePadre, englobado dentro del atributo-objeto de este, self.widgetSuperior:

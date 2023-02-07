@@ -1,11 +1,10 @@
 from tkinter import messagebox
-from PaquetesVisorDeFotos.Logica.Funciones.FuncionesVarias import cantidadDeFotosEn
-from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import carpetaDeFotos
+from PaquetesVisorDeFotos.Logica.Funciones.FuncionesVarias import cantFotosJpgEnCarpetaFotos
 
 def nuevaPosicionLuegoDePulsarBoton(accion, posicionActual):
     posicion = posicionActual
     primeraPosicion = 0
-    longitud = cantidadDeFotosEn(carpetaDeFotos)
+    longitud = cantFotosJpgEnCarpetaFotos()
    
     if accion == "irAprimerRegistro": posicion = primeraPosicion
     

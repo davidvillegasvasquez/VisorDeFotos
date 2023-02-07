@@ -7,8 +7,11 @@ infoLabels = {'etiqFoto':{'tipoWidget':'label', 'texto':'Foto', 'col':1, 'fila':
 
 descripWidgetsCuerpoSup = {**infoLabels} #, **variableDeControl, **infoEntrys} #Y así se concatenan los diccionario de diccionarios para decrip de widgets contenidos en cuerpo superior.
 
-carpetaDeFotos = '/home/david/Imágenes/FotosVisor/'
-
 #descripWidgetsCuerpoMedio = {'nombreWidget':{'tipoWidget':'hojaPorEj', 'ancho':9, 'col':0, 'fila':0, 'sticky':'NSWE'}}
 
 #Como el cuerpo inferior generalmente se usa para los widgets de botones, su información está contenida directamente en el módulo WidgetContenedorYBotonesNav.py.
+
+#Información para los widgets de los menús:
+
+#Otros datos constantes:
+pathCarpetaDeFotosJpg = '/home/david/Imágenes/FotosVisor/'
