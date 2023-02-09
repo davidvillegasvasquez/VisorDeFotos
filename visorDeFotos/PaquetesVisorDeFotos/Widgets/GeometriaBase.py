@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from PaquetesVisorDeFotos.Logica.Funciones.AdminFotos import FotoToolsPostgreSQL
 from PaquetesVisorDeFotos.Widgets.DescripciónDeLosWidgets import descripWidgetsCuerpoSup
+from os.path import exists
+from tkinter import messagebox
 
 class Geometria:
     def __init__(self, argRaiz):   
@@ -50,8 +52,12 @@ class Geometria:
         self.txtBoxUbicacionFoto.grid(row=1, column=2)
         ttk.Button(self.top, width= 7, text = 'Ingresar', command = self.ingresarFotoAbaseDeDatosPostgre).grid(row=1, column=3)
         self.top.grab_set()
-        
+
     def ingresarFotoAbaseDeDatosPostgre(self, *args):
-        fotoIngreso = FotoToolsPostgreSQL()
-        fotoIngreso.ingresarFotoAPostgre(ubicaciónFoto = self.ubicacionFoto.get()) 
-               
+        archivoFoto = self.ubicacionFoto.get()
+        if exists(archivoFoto): 
+            fotoIngreso = FotoToolsPostgreSQL()
+            fotoIngreso.ingresarFotoAPostgre(ubicaciónFoto = archivoFoto)
+        else:
+            messagebox.showerror(message='No se encontró foto: verifique que path y nombre de foto estén correctos. Recuerde incluir extensión .jpg en nombre.', title='Error')
+              

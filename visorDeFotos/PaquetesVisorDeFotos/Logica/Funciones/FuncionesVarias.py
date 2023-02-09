@@ -13,3 +13,7 @@ def cantFotosJpgEnCarpetaFotos():
             if foto.is_file()  and foto.name.endswith('.jpg'):
                 cantidad += 1 
     return cantidad
+    
+def cantFotosJpgEnBD():
+    return 4
+    
